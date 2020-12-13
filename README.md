@@ -85,9 +85,9 @@ Busquei em mim algum ponto de dor, alguma necessidade que eu pudesse sanar media
 
 - [x] _Get_
 
-  - [x] status code: 200 (ok)
+  - [x] "/" Retorna index com apresentação
 
-    - [x] "/" Retorna index com apresentação
+    - [x] status code: 200 (ok)
 
       {
 
@@ -96,11 +96,53 @@ Busquei em mim algum ponto de dor, alguma necessidade que eu pudesse sanar media
       }
 
   - [x] "/financas" retorna todos os dados do banco de dados sobre finanças
-  - [x] "/financas/contacorrente" Retorna as finanças do tipo conta corrente
+
+    - [x] status code: 500 (erro de servidor)
+    - [x] status code: 200 (ok)
+
+      {
+
+      mensagem: Get com sucesso
+
+      }
+
+  - [x] "/financas/:id" Retorna as finanças do tipo conta corrente
+
+    - [x] status code: 200 (ok)
+    - [x] status code: 500 (erro de servidor)
+    - [x] status code: 404 (não encontrado)
+
+      {
+
+      mensagem: ID não encontrado
+
+      }
+
+  - [x] "/financas/nome/:nome" Retorna as finanças do tipo conta corrente
+
+    - [x] status code: 200 (ok)
+    - [x] status code: 500 (erro de servidor)
+    - [x] status code: 404 (não encontrado)
+
+      {
+
+      mensagem: Nome não encontrado
+
+      }
 
 - [x] _Post_
+
   - [x] "/financas" cria uma nova modalidade de finanças
-  - [x] "" cria um novo material de investimento
+
+    - [x] status code: 400 (error)
+    - [x] status code: 200 (ok)
+
+    {
+
+    mensagem: POST com sucesso
+
+    }
+
 - [x] _Put_
   - [x] ""
   - [x] ""
