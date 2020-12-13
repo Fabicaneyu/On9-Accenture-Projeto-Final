@@ -31,23 +31,6 @@ const addFinancas = (request, response) => {
     })
 }
 
-const getbyID = (request, response) => {
-    const id = request.params.id;
-
-    financasCollections.findById(id, (error, financas) => {
-        if(error){
-            return response.status(500).send(error);
-        } else if(financas == "") {
-            return response.status(404).send({
-                mensagem:"ID não encontrado",
-            })
-        } else {
-            //GET por id feito com sucesso"
-            return response.status(200).send(financas);
-        }
-    })
-}
-
 const getbyNome = (request, response) => {
     const nome = request.params.nome;
 
@@ -61,6 +44,23 @@ const getbyNome = (request, response) => {
         } else {
             //"GET por nome feito com sucesso"
             return response.status(200).send(financas); 
+        }
+    })
+}
+
+const getbyID = (request, response) => {
+    const id = request.params.id;
+
+    financasCollections.findById(id, (error, financas) => {
+        if(error){
+            return response.status(500).send(error);
+        } else if(financas == "") {
+            return response.status(404).send({
+                mensagem:"ID não encontrado",
+            })
+        } else {
+            //GET por id feito com sucesso"
+            return response.status(200).send(financas);
         }
     })
 }
