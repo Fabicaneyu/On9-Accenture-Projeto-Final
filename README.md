@@ -14,7 +14,7 @@ A estrutura de um **Prisma** recebe uma iluminação e dissipa em várias outras
 - [Matriz CSD](#matriz-csd)
 - [Card Sorting](#card-sorting)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Documentação de API (versão 1.0)](#documentação-de-api)
+- [Documentação de API v1](#documentação-de-api-v1)
 - [Rotas](#rotas)
 - [Arquitetura MVC](#arquitetura-mvc)
 - [Agradecimentos](#agradecimentos)
@@ -79,7 +79,7 @@ Busquei em mim algum ponto de dor, alguma necessidade que eu pudesse sanar media
 
 ---
 
-## Documentação de API (versão 1.0)
+## Documentação de API v1
 
 ### Rotas
 
@@ -155,7 +155,7 @@ Busquei em mim algum ponto de dor, alguma necessidade que eu pudesse sanar media
 ### Arquitetura MVC
 
 ```bash
-\--📂 NOME-DO-SEU-SERVIDOR
+\--📂 Prisma-Educacao-Financeira
 		 |   .gitignore
 		 |   package-lock.json
 		 |   package.json
@@ -165,15 +165,15 @@ Busquei em mim algum ponto de dor, alguma necessidade que eu pudesse sanar media
 			    |   **app.js**
 			    |
 			    📂---controller
-			    |       **NOMEController.js**
+			    |       **financasController.js**
 			    |
 			    📂---model
-			    |       **NOMESchema.js
+			    |       **financasSchema.js
 					|       Repository.js**
 			    |
 			    📂---routes
-			            **NOMERoute.js
-									index.js**
+			            **financasRoute.js
+					|       index.js**
 ```
 
 ---
