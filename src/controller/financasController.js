@@ -37,20 +37,37 @@ const getbyID = (request, response) => {
     financasCollections.findById(id, (error, financas) => {
         if(error){
             return response.status(500).send(error);
-        } else if(financas) {
-            return response.status(200).send({
-                mensagem:"GET por id feito com sucesso",
-                financas
+        } else if(financas == "") {
+            return response.status(404).send({
+                mensagem:"ID não encontrado",
             })
         } else {
-            return response.status(404).send("ID não encontrado");
+            //GET por id feito com sucesso"
+            return response.status(200).send(financas);
         }
     })
 }
 
+const getbyNome = (request, response) => {
+    const nome = request.params.nome;
+
+    financasCollections.find({nome:nome}, (error, financas) => {
+        if(error){
+            return response.status(500).send(error);
+        } else if(financas == "") {
+            return response.status(404).send({
+                mensagem:"Nome não encontrado"
+            })
+        } else {
+            //"GET por nome feito com sucesso"
+            return response.status(200).send(financas); 
+        }
+    })
+}
 
 module.exports = {
     getAll,
     addFinancas,
-    getbyID
+    getbyID,
+    getbyNome
 }
